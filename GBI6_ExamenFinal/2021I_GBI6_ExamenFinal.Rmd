@@ -84,7 +84,7 @@ setwd
 ### [0.5 PUNTOS] 1.2. Cargue la data "mRNA_expr.csv"
 ```{r data}
 library(readr)
-df <- read_csv("mRNA_expr.csv")
+df <- read.csv("C:/Users/UDGS/Documents/GitHub/ExamenFinal/GBI6_ExamenFinal/mRNA_expr.csv")
 
 ```
 
@@ -108,6 +108,9 @@ long_df <- function(df) {
 La tabla resultante tendrá tres columnas: ```dataset, gen, expresion_level```.  
 ```{r df_long}
 # Genere la data df_long 
+df_long <- long_df(df)
+
+prueba <- df_long %>% group_by(gen)
 
 ```
 
