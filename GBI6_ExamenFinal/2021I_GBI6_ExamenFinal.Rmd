@@ -14,8 +14,6 @@ output:
       smooth_scroll: yes
 ---
 
-![](./img/ikiam.png)
-
 **Bienvenidos al examen final de GBI6 - Bioinformática.**
 
 # CONTENIDO DE LA EVALUACIÓN
@@ -77,14 +75,14 @@ Para comprender la data de esta evaluación se requiere conocer el significado d
 
 ### [0.5 PUNTOS] 1.1 Defina su directorio de trabajo. 
 ```{r wd}
-setwd
+setwd(getwd())
 
 ```
 
 ### [0.5 PUNTOS] 1.2. Cargue la data "mRNA_expr.csv"
 ```{r data}
 library(readr)
-df <- read.csv("C:/Users/UDGS/Documents/GitHub/ExamenFinal/GBI6_ExamenFinal/mRNA_expr.csv")
+df <- read.csv("C:/Users/UDGS/Documents/GitHub/ExamenFinal/GBI6_ExamenFinal/data/mRNA_expr.csv")
 
 ```
 
@@ -109,7 +107,6 @@ La tabla resultante tendrá tres columnas: ```dataset, gen, expresion_level```.
 ```{r df_long}
 # Genere la data df_long 
 df_long <- long_df(df)
-
 prueba <- df_long %>% group_by(gen)
 
 ```
@@ -134,8 +131,9 @@ descr(cancer_mama) %>% tab_df(title = "Estadistica descriptiva del cancer de MAM
 
 
 ```{tex}
-# Escriba aquí su interpretación 
-
+# Escriba aquí su interpretación
+En esta tabla se puede observar los principales tipos de cancer y genes, 
+La tabla brinda un resumen estadistico de los principales genes y canceres presentes en una dataframe, donde se pueden decir que los 3 proncipales canceres son: BRCA (590), OV (561) y LUSC (154). Ademas, los genes que mas se expresaron respectivamente para estos tipos de cancer son: ESR1 (media 2.3), FN1 (media 1.33) y MUC1 (media 0.56). Al contrario, los canceres con observaciones menores a 100 y 50 fueron KIPAN (88) y UCEC (54), con mayor expresion en el gen PTEM (media 0.72) y ESR1 (media 2.17). Finalmente, el canceer con menor repeticion fue el KIRP con 16 observaciones, con mayor expresion en el gen PTEN.
 ```
 
 
